@@ -20,4 +20,21 @@ Proyek ini merupakan analisis data e-commerce di Brazil yang mencakup analisis R
 conda create --name main-ds python=3.9
 conda activate main-ds
 pip install pandas numpy matplotlib seaborn streamlit plotly geopandas babel unidecode
+```
+## Setup Environment - Shell/Terminal
+```
+python -m venv venv
+source venv/bin/activate  # Untuk Linux/Mac
+venv\Scripts\activate     # Untuk Windows
+pip install pandas numpy matplotlib seaborn streamlit plotly geopandas babel unidecode
+```
+## Atau install menggunakan `requirements.txt`
+```
+pip install -r requirements.txt
+```
+## Run Streamlit App
+```
+streamlit run dashboard/streamlit.py
+```
+
 
