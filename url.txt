@@ -1,0 +1,2 @@
+streamlit cloud : https://customer-segmentation-olist-rfm.streamlit.app/
+app engine : https://streamlit-ecommerce.et.r.appspot.com/
