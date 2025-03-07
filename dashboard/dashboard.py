@@ -18,7 +18,7 @@ df_highest = pd.read_csv('./data/processed/df_highest.csv')
 geojson_file = './data/brazil-states.geojson'
 gdf = gpd.read_file(geojson_file)
 
-@st.cache_data
+@st.cache_data(ttl=600)
 def load_data():
     # Loading all necessary datasets
     customers_df = pd.read_csv('data/customers_dataset.csv')
@@ -149,7 +149,7 @@ with tab1:
     # Best and worst performing categories
     st.subheader("🏆 Best & Worst Performing Product Categories")
     
-    order_category_df = all_data.groupby('product_category_name_english')['order_id'].nunique().reset_index(name='order_count')
+    order_category_df = filtered_data.groupby('product_category_name_english')['order_id'].nunique().reset_index(name='order_count')
 
     # Sort untuk kategori tertinggi dan terendah
     best_categories = order_category_df.sort_values(by='order_count', ascending=False).head(5)
@@ -411,7 +411,7 @@ with tab4:
     st.subheader("Top 20 City by Total Payment Value")
 
     # Calculate total payment value per city
-    city_payment_sum = all_data.groupby('customer_city')['price'].sum().reset_index()
+    city_payment_sum = filtered_data.groupby('customer_city')['price'].sum().reset_index()
 
     # Sort cities by payment value in descending order
     city_payment_sum_sorted = city_payment_sum.sort_values('price', ascending=False)
