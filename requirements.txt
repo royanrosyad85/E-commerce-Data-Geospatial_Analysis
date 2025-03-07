@@ -9,4 +9,3 @@ babel>=2.9.0
 unidecode>=1.3.0
 jupyter>=1.0.0
 ipykernel>=6.0.0
-matplotlib-ticker>=0.4.0
