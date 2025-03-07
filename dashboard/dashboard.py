@@ -18,7 +18,7 @@ df_highest = pd.read_csv('./data/processed/df_highest.csv')
 geojson_file = './data/brazil-states.geojson'
 gdf = gpd.read_file(geojson_file)
 
-@st.cache_data
+@st.cache_data(ttl=600)
 def load_data():
     # Loading all necessary datasets
     customers_df = pd.read_csv('data/customers_dataset.csv')
