@@ -16,25 +16,23 @@ Proyek ini merupakan analisis data e-commerce di Brazil yang mencakup analisis R
 - matplotlib-ticker
 
 ## Setup Environment - Anaconda
-```bash
+```
 conda create --name main-ds python=3.9
 conda activate main-ds
-pip install pandas numpy matplotlib seaborn streamlit plotly geopandas babel unidecode
+pip install -r requirements.txt
 ```
 ## Setup Environment - Shell/Terminal
 ```
-python -m venv venv
-source venv/bin/activate  # Untuk Linux/Mac
-venv\Scripts\activate     # Untuk Windows
-pip install pandas numpy matplotlib seaborn streamlit plotly geopandas babel unidecode
-```
-## Atau install menggunakan `requirements.txt`
-```
+mkdir analisis_data
+cd analisis_data
+pipenv install
+pipenv shell
 pip install -r requirements.txt
 ```
+
 ## Run Streamlit App
 ```
-streamlit run dashboard/streamlit.py
+streamlit run dashboard/dashboard.py
 ```
 
 
